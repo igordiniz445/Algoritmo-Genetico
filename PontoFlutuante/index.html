@@ -5,8 +5,35 @@
         <title>Algoritmo Genetico</title>
     </head>
     <body class="main">
+      <br>
+      <h3>Matheus Amancio</h3>
+      <h3>Igor Otávio</h3>
+      <br>
+      <h2>Instruções</h2>
+      <h3>Entre com os valores nos campos abaixo, clique em "Gravar Informações" e depois escolha entre "Rodar um" ou "Muda mais apto"</h3>
+      <label>Para conferir os passos que o Algoritmo executa, habilite e verifique o console*</label><br><br>
+      <form>
+        <label>Numero de individuos:</label><br>
+        <input type="text" value="11" id="idIndividuos" placeholder="Qtd Individuos"><br><br>
+        <label>Numero de Geraçoes</label><br>
+        <input type="text" value="250" id="idNumGeracoes" placeholder="Qtd Gerações"><br><br>
+        <label>Taxa Crossover</label><br>
+        <input type="text" value="0.7"  id="idTaxaCrossOver" placeholder="Taxa Crossover"><br><br>
+        <label>Taxa Mutação</label><br>
+        <input type="text" value="0.1" id="idTaxaMutacao" placeholder="Taxa Mutacao"><br><br>
+        <label>Limite Inferior</label><br>
+        <input type="text" value="-10" id="idLimiteInferior" placeholder="Limite Inferior"><br><br>
+        <label>Limite Superior</label><br>
+        <input type="text" value="10" id="idLimiteSuperior" placeholder="Limite Superior"><br><br>
+        <button type="button" onclick="saveInput()">Gravar informaçoes</button><br><br><br>
+      </form>
       <button onclick="rodaUm()"> Roda um </button>
       <button onclick="mudaMaisApto()"> Muda mais apto </button>
+      <br><br><br><br>
+      <div>
+        <label>Resultado com mais aptidão:</label><br>
+        <label id="lblResult"></label>
+      </div>
       <script src="./Genetico.js"></script>
       <script src="./Populacao.js"></script>
       <script src="./Individuo.js"></script>

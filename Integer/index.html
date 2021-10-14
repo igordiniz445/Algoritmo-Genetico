@@ -5,8 +5,29 @@
         <title>Algoritmo Genetico</title>
     </head>
     <body class="main">
+      <br><br>
+      <label>Para conferir os passos que o Algoritmo executa, habilite e verifique o console*</label>
+      <form>
+        <label>Numero de individuos:</label><br>
+        <input type="text" id="idIndividuos" placeholder="Qtd Individuos"><br><br>
+        <label>Numero de Geraçoes</label><br>
+        <input type="text" id="idNumGeracoes" placeholder="Qtd Gerações"><br><br>
+        <label>Taxa Crossover</label><br>
+        <input type="text" id="idTaxaCrossOver" placeholder="Taxa Crossover"><br><br>
+        <label>Taxa Mutação</label><br>
+        <input type="text" id="idTaxaMutacao" placeholder="Taxa Mutacao"><br><br>
+        <label>Limite Inferior</label><br>
+        <input type="text" id="idLimiteInferior" placeholder="Limite Inferior"><br><br>
+        <label>Limite Superior</label><br>
+        <input type="text" id="idLimiteSuperior" placeholder="Limite Superior"><br><br>
+      </form>
       <button onclick="rodaUm()"> Roda um </button>
       <button onclick="mudaMaisApto()"> Muda mais apto </button>
+      <br><br><br><br>
+      <div>
+        <label>Resultado:</label><br>
+        <label id="lblResult"></label>
+      </div>
       <script src="./Genetico.js"></script>
       <script src="./Populacao.js"></script>
       <script src="./Individuo.js"></script>
