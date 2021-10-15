@@ -1,4 +1,4 @@
-const arr_size = 8
+const arr_size = 5
 var alg
 function funcaoObjetivo (x) {
   return (x * x) - (3 * x) + 4
@@ -20,22 +20,33 @@ function mudaMaisApto () {
     alg.geraNovaPopulacao()
     newBest = alg.populacao.maisApto().aptidao
     console.log(`Rodando pela ${i}-ésima vez, aptidao atual ${newBest}`)
-  } while (oldBest >= newBest && i < 100)
+  } while (oldBest >= newBest && i < idNumGeracoes)
   console.log(`Foram necessárias ${i} iterações para a mais apto sair de ${oldBest} a ${newBest}`)
+  document.getElementById("lblResult").textContent = alg.populacao.maisApto().aptidao
+  console.log(alg.populacao.populacao)
+  console.log(alg.populacao.maisApto())
 }
 
 function saveInput(){
-  var idIndividuos = document.getElementById("idIndividuos").value
-  var idNumGeracoes = document.getElementById("idNumGeracoes").value
-  var idTaxaCrossOver = document.getElementById("idTaxaCrossOver").value
-  var idTaxaMutacao = document.getElementById("idTaxaMutacao").value
-  var idLimiteInferior = document.getElementById("idLimiteInferior").value
-  var idLimiteSuperior = document.getElementById("idLimiteSuperior").value
+  idIndividuos = document.getElementById("idIndividuos").value
+  idNumGeracoes = document.getElementById("idNumGeracoes").value
+  idTaxaCrossOver = document.getElementById("idTaxaCrossOver").value
+  idTaxaMutacao = document.getElementById("idTaxaMutacao").value
 
   alg = new Genetico(idIndividuos, idNumGeracoes, idTaxaCrossOver, idTaxaMutacao, funcaoObjetivo, idLimiteInferior, idLimiteSuperior)
 
+  document.getElementById("lblResult").textContent = alg.populacao.maisApto().aptidao
+  console.log(alg.populacao.populacao)
+  console.log(alg.populacao.maisApto())
+
 }
 
-// const alg = new Genetico(11, 250, 0.7, 0.01, funcaoObjetivo, -10, 10)
-// console.log(alg.populacao.populacao)
-// console.log(alg.populacao.maisApto())
+var idLimiteInferior = -10
+var idLimiteSuperior = 10
+
+var idIndividuos
+var idNumGeracoes
+var idTaxaCrossOver
+var idTaxaMutacao
+
+saveInput()

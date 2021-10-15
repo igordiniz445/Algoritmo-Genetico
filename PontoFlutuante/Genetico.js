@@ -13,6 +13,10 @@ class Genetico {
       populacao.push(Math.random() * (limiteSuperior - limiteInferior) + limiteInferior)
     }
     this.populacao = new Populacao(nIndividuos, 0, funcaoObjetivo, txCrossover, txMutacao, populacao, limiteInferior, limiteSuperior)
+    this.populacao.populacao.map(el => {
+      el.valor = this.populacao.bArrToVal(el.cromossomo)
+      el.aptidao = this.populacao.aptidao(el.valor)
+    })
     this.listaPopulacoes = [Object.assign({}, this.populacao)]
   }
 
